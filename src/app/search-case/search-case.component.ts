@@ -1,21 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchCaseService } from './search-case.service';
+import { Customer } from './search-case.service';
+import { CustomerViewComponent } from '../customer-view/customer-view.component';
 
 @Component({
   selector: 'search-case',
   templateUrl: './search-case.component.html',
   styleUrls: ['./search-case.component.css'],
-  providers: [SearchCaseService]
+  providers: [SearchCaseService, Customer , CustomerViewComponent]
 })
-export class SearchCaseComponent implements OnInit {
-  custs: string[];
 
+export class SearchCaseComponent implements OnInit {
+  custs: Customer[];
+  customer : Customer;
+  
   constructor(searchCaseService: SearchCaseService) {
-    this.custs = searchCaseService.getCustomers();
+    this.custs = searchCaseService.getCustomerList();
+    this.customer = searchCaseService.getCustomer();
   }
-  firstname : string;
+  customerViewComponent : CustomerViewComponent;
   searchCriteria(firstname){
-    console.log(firstname);
+    //this.customerViewComponent.addCustomer(this.customer);
+    console.log(this.custs);
+    console.log(this.customer.name);
   }
   ngOnInit() {
   }

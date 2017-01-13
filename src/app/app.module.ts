@@ -8,6 +8,7 @@ import { CaseInboxComponent } from './case-inbox/case-inbox.component';
 import { CaseDetailsComponent } from './case-details/case-details.component';
 import { RequestViewComponent } from './request-view/request-view.component';
 import { SearchCaseComponent } from './search-case/search-case.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchCaseComponent } from './search-case/search-case.component';
     CaseInboxComponent,
     CaseDetailsComponent,
     RequestViewComponent,
-    SearchCaseComponent
+    SearchCaseComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,
