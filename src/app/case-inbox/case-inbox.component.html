@@ -1,0 +1,25 @@
+<div class="row" style="border-bottom: 1em solid white;background-color: skyblue;">
+	<div class="col-md-12" >
+		<div>Case Inbox</div>
+	</div>
+</div>
+<table class="table table-hover" style="background: white;">
+	<thead>
+		<tr>
+			<th>Sr No</th>
+			<th>Case Id</th>
+			<th>Case Ref</th>
+			<th>Status</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody >
+		<tr *ngFor="let casedetail of casedetails">
+			<td>{{casedetail.srno}}</td>
+			<td><a href="#">{{casedetail.caseid}}</a></td>
+			<td>{{casedetail.caseref}}</td>
+			<td>{{casedetail.status}}</td>
+			<td>{{casedetail.owner}}</td>
+		</tr>
+	</tbody>
+</table>

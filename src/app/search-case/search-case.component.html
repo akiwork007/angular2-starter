@@ -1,0 +1,42 @@
+<style>
+.row div div {
+	padding: .5em 0;
+	font-weight: bold;
+}
+.row input {
+	float: right;
+	max-width: 50%;
+	margin-right: 2em;
+}
+</style>
+<div class="row text-center" style="background-color: lightskyblue;">
+	<div class="col-md-12">
+		<h3>Search Customer</h3>
+	</div>
+</div>
+<div class="row" style="padding: 2em 3em;background-color: silver;margin-top : 1em;">
+	<div class="col-md-12">
+		<form>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						First name
+						<input type="text" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+						Second Name <input type="text" class="form-control" id="email">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						Dob <input type="text" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+						Postal Code <input type="text" class="form-control" id="email">
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success" (click)="searchCriteria()">Submit</button>
+		</form>
+	</div>
+</div>
