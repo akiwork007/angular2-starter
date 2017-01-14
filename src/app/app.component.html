@@ -3,6 +3,7 @@
 	</search-case>
 </div>
 <div *ngIf="customerpage == true">
-	<customer-view>
+	<customer-view 
+			[customers] = "customers">
 	</customer-view>
 </div>

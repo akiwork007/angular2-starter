@@ -1,0 +1,27 @@
+<div class="row text-center" style="border-bottom: 1em solid white;background-color: skyblue;">
+	<div class="col-md-12" >
+		<h3>Customers</h3>
+	</div>
+</div>
+<table class="table table-hover" style="background: white;">
+	<thead>
+		<tr>
+			<th>Sr No</th>
+			<th>Cust Id</th>
+			<th>Name </th>
+			<th>Last Name</th>
+			<th>Status</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody >
+		<tr *ngFor="let customer of customers">
+			<td></td>
+			<td>{{customer.custid}}</td>
+			<td>{{customer.name}}</td>
+			<td>{{customer.lastname}}</td>
+			<td>{{customer.status}}</td>
+			<td><input type="checkbox" /></td>
+		</tr>
+	</tbody>
+</table>
