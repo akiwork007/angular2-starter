@@ -12,12 +12,10 @@ import { SearchCaseService } from './search-case/search-case.service';
 
 export class AppComponent {
   searchpage: boolean = true;
-  customerpage: boolean = false;
+  customerpage: boolean = false; 
   customers: Customer[];
   constructor(sc: SearchCaseService) {
     this.customers = sc.getCustomerList();
-    this.searchpage = false;
-      this.customerpage = true;
   }
 
   onSearch(custf: boolean) {
