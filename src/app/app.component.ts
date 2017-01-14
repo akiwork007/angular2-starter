@@ -15,8 +15,18 @@ export class AppComponent {
   customerpage: boolean = false;
   customers: Customer[];
   constructor(sc: SearchCaseService) {
-    this.customerpage = true;
     this.customers = sc.getCustomerList();
+    this.searchpage = false;
+      this.customerpage = true;
   }
+
+  onSearch(custf: boolean) {
+    console.log(custf);
+    if(custf){
+      this.searchpage = false;
+      this.customerpage = true;
+    }
+  }
+
 
 }

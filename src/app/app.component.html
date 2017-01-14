@@ -1,9 +1,9 @@
 <div *ngIf="searchpage == true">
-	<search-case>
+	<search-case (onSearch)="onSearch($event)">
 	</search-case>
 </div>
 <div *ngIf="customerpage == true">
 	<customer-view 
-			[customers] = "customers">
+			[customers] = "customers" >
 	</customer-view>
 </div>
