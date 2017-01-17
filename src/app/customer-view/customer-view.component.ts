@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output,EventEmitter   } from '@angular/core';
 import { Customer } from '../customer';
+import { SearchCustomer } from '../searchcustomer';
+
 
 @Component({
   selector: 'customer-view',
@@ -9,6 +11,7 @@ import { Customer } from '../customer';
 
 export class CustomerViewComponent implements OnInit {
   @Input() customers : Customer[];
+  @Input() searchCriteria : SearchCustomer;
   @Output() onEdit = new EventEmitter<boolean>();
 
   selectedCustomers : Customer[];

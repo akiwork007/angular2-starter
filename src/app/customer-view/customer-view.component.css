@@ -1,0 +1,9 @@
+.search-cond {
+    background-color: silver;
+    padding: 1em;
+}
+
+.search-cond label {
+    font-weight: bold;
+    padding: 0 2em;
+}

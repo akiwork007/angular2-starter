@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Customer } from './customer';
+import { SearchCustomer } from './searchcustomer';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class AppComponent {
   customerpage: boolean = false;
 
   customers: Customer[];
+  searchCriteria : SearchCustomer;
 
   constructor() {
   }
@@ -23,6 +25,11 @@ export class AppComponent {
     this.customers = custList;
     this.searchpage = false;
     this.customerpage = true;
+  }
+
+  //
+  onSearchCreteria(searchCond : SearchCustomer){
+    this.searchCriteria = searchCond;
   }
 
 

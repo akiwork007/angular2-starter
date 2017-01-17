@@ -13,10 +13,12 @@ import { SearchCustomer } from '../searchcustomer';
 
 export class SearchCaseComponent implements OnInit {
   @Output() onSearch = new EventEmitter<Customer[]>();
+  @Output() onSearchCreteria = new EventEmitter<SearchCustomer>();
+
 
   searchCriteria = new SearchCustomer();// Attached to form inputs
-  errorMessage :string;
-  errorSearch : boolean = false;
+  errorMessage: string;
+  errorSearch: boolean = false;
 
   constructor(private _searchCaseService: SearchCaseService) {
   }
@@ -25,12 +27,24 @@ export class SearchCaseComponent implements OnInit {
   // Emit event to hide this component if Customer is found
   custList: Customer[];
   searchCustomer() {
-    this.custList = this._searchCaseService.getCustomerList(this.searchCriteria);
-    if (this.custList != null) {
-      this.onSearch.emit(this.custList);// Emit and event 
-    } else {
+    console.log(this.searchCriteria);
+    if ((this.searchCriteria.name != null && this.searchCriteria.dob != null && this.searchCriteria.postalcode != null)
+      || (this.searchCriteria.dob != null && this.searchCriteria.lastname != null && this.searchCriteria.postalcode != null)
+      || (this.searchCriteria.lastname != null && this.searchCriteria.name != null && this.searchCriteria.postalcode != null)
+      || (this.searchCriteria.lastname != null && this.searchCriteria.name != null && this.searchCriteria.dob != null)) {
+      this.custList = this._searchCaseService.getCustomerList(this.searchCriteria);
+      console.log(this.custList);
+      if (this.custList != null) {
+        this.onSearch.emit(this.custList);// Emit and event 
+        this.onSearchCreteria.emit(this.searchCriteria);// Emit and event 
+      } else {
+        this.errorSearch = true;
+        this.errorMessage = "Technical Error Please Try Again";
+      }
+    }
+    else {
       this.errorSearch = true;
-      this.errorMessage = "Technical Error Please Try Again";
+      this.errorMessage = "Atleast Three Field Should be entered before search";
     }
   }
 

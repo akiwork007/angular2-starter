@@ -3,6 +3,27 @@
 		<h3>Customers</h3>
 	</div>
 </div>
+
+<div class="row search-cond">
+	<div class="col-md-2">
+		<span>Search Criteria</span>
+	</div>
+	<div class="col-md-2">
+		<label>Name : </label><span>{{searchCriteria.name}} </span>
+	</div>
+	<div class="col-md-2">
+		<label>Last Name : </label><span>{{searchCriteria.lastname}} </span>
+	</div>
+	<div class="col-md-2">
+		<label>DOB : </label><span>{{searchCriteria.dob}} </span>
+	</div>
+	<div class="col-md-2">
+		<label>Postal Code : </label><span>{{searchCriteria.postalcode}} </span>
+	</div>
+	<div class="col-md-2">
+		<input type="button" (click)="goBack()" class="btn btn-success" value="Go Back"/>
+	</div>
+</div>
 <table class="table table-hover" style="background: white;">
 	<thead>
 		<tr>
@@ -26,4 +47,3 @@
 	</tbody>
 </table>
 <input type="button" (click)="submitSelectedCust()" class="btn btn-success" value="Find Products"/>
-<input type="button" (click)="goBack()" class="btn btn-success" value="Go Back"/>
