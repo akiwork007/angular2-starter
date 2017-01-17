@@ -8,10 +8,10 @@
 	max-width: 50%;
 	margin-right: 2em;
 }
-
 </style>
-<div>
-</div>
+<!--<div>
+{{diagnostic}}
+</div>-->
 <div class="row text-center" style="background-color: lightskyblue;">
 	<div class="col-md-12">
 		<h3>Search Customer</h3>
@@ -49,4 +49,7 @@
 			<button type="submit" class="btn btn-success" (click)="searchCustomer()">Submit</button>
 		<!--</form>-->
 	</div>
+</div>
+<div *ngIf="errorSearch" class="well" style="margin-top : 2em;background-color: indianred;">
+	<span style="margin: 1em;">{{errorMessage}}</span>
 </div>
