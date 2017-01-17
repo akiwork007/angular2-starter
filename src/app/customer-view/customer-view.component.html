@@ -21,7 +21,7 @@
 			<td>{{customer.name}}</td>
 			<td>{{customer.lastname}}</td>
 			<td>{{customer.status}}</td>
-			<td><input type="checkbox" /></td>
+			<td><input type="checkbox" (click)="selectCustomer(customer)"/></td>
 		</tr>
 	</tbody>
 </table>

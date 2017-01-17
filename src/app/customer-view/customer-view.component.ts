@@ -25,7 +25,7 @@ export class CustomerViewComponent implements OnInit {
     console.log(cust);
   }
 
-
+  // Event to show the seach panel and hide this panel
   goBack(){
      this.onEdit.emit(true);
   }

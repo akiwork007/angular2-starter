@@ -8,7 +8,10 @@
 	max-width: 50%;
 	margin-right: 2em;
 }
+
 </style>
+<div>
+</div>
 <div class="row text-center" style="background-color: lightskyblue;">
 	<div class="col-md-12">
 		<h3>Search Customer</h3>
@@ -20,23 +23,30 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						First name
-						<input type="text" class="form-control" id="email">
+						<label for="name">First name</label>
+						<input type="text" class="form-control" 
+						[(ngModel)]="searchCriteria.name"  name="name" >
 					</div>
 					<div class="form-group">
-						Second Name <input type="text" class="form-control" id="email">
+						<label for="lastname">Last Name</label>
+						<input type="text" class="form-control"    
+						[(ngModel)]="searchCriteria.lastname"  name="lastname" >
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						Dob <input type="text" class="form-control" id="email">
+						<label for="dob">Dob</label>
+						<input type="text" class="form-control"   
+						[(ngModel)]="searchCriteria.dob"  name="dob" >
 					</div>
 					<div class="form-group">
-						Postal Code <input type="text" class="form-control" id="email">
+						<label for="postalcode">Postal Code</label>
+						<input type="text" class="form-control"   
+						[(ngModel)]="searchCriteria.postalcode"  name="postalcode" >
 					</div>
 				</div>
-			</div>
-			<button type="submit" class="btn btn-success" (click)="searchCriteria()">Submit</button>
+			</div> 
+			<button type="submit" class="btn btn-success" (click)="searchCustomer()">Submit</button>
 		<!--</form>-->
 	</div>
 </div>
